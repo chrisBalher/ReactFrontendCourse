@@ -8,13 +8,16 @@ class DishDetail extends Component {
     renderDish(dish){
         if (dish != null) {
             return(
-                <Card className=" col-12 col-md-5 m-1">
-                    <CardImg width="100%" src={dish.image} alt={dish.name}/>
-                    <CardBody>
-                        <CardTitle>{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
-                    </CardBody>
-                </Card>
+                
+                    <Card className=" col-12 col-md-5 m-1">
+                        <CardImg width="100%" src={dish.image} alt={dish.name}/>
+                        <CardBody>
+                            <CardTitle>{dish.name}</CardTitle>
+                            <CardText>{dish.description}</CardText>
+                        </CardBody>
+                    </Card>
+                
+                
             );
         }else{
             return(
@@ -25,11 +28,12 @@ class DishDetail extends Component {
     renderComments(dish){
         if (dish != null) {
             const commentsAll = dish.comments.map((comment)=>{
-                let dt= new Date(comment.date)
+                let dt = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))
                 return (
                     <ul className="list-unstyled">
                         <li>{comment.comment}</li>
-                        <li>-- {comment.author}, { dt.toLocaleString('en-us', { month: 'short' })+' '+dt.getDay()+','+dt.getFullYear()}</li>
+                        {/* <li>-- {comment.author}, { dt.toLocaleString('en-us', { month: 'short' })+' '+dt.getDay()+','+dt.getFullYear()}</li> */}
+                        <li>-- {comment.author}, {dt}</li>
                     </ul>
                 );
             });
@@ -47,9 +51,11 @@ class DishDetail extends Component {
     }
     render(){
         return (
-            <div className="row">
+            <div class="container">
+                <div className="row">
                     {this.renderDish(this.props.dish )}
                     {this.renderComments(this.props.dish)}
+                </div>
             </div>
         );
     }
