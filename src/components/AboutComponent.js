@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardImg,  CardText, CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardHeader, Media, CardSubtitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { LEADERS } from '../shared/leaders';
 
 function RenderLeader( {leader} ) {
     return (
