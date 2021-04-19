@@ -33,7 +33,7 @@ function RenderMenuItem ({dish, onClick}) {
                     <div className="col-12">
                         <h3>Menu</h3>
                         <hr />
-                    </div>                
+                    </div>
                 </div>
                 <div className="row">
                     {menu}

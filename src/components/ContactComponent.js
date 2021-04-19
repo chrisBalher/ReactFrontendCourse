@@ -119,8 +119,8 @@ class Contact extends Component {
                             <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
                                 <Col md={10}>
                                     <Control.text model=".telnum" id="telnum" name="telnum"
-                                        placeholder="Tel. number"
-                                        className="form-control"
+                                        placeholder= "Tel. number"
+                                        className= "form-control"
                                         validators={{
                                             required,
                                             minLength: minLength(3), maxLength: maxLength(15),
