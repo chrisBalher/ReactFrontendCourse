@@ -12,7 +12,7 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 class Contact extends Component {
     constructor(props){
         super(props);
-        //state se maneja dsde react-redux-form
+        //state se maneja desde react-redux-form
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
